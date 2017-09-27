@@ -1,277 +1,198 @@
-var desoffset;
-var scrollcheck = 0;
-$(document).ready(function() {
-    desoffset = $(".sertab1").offset().top;
-    //console.log("des :"+desoffset);
-    //console.log($(".sertab1").offset().top);
-    //desoffset=1717.237548828125;
-});
-$(window).scroll(function() {
-    var scroll = $(this).scrollTop();
-
-    //console.log(scroll);
-    var height = $("#container").height();
-    var scp = scroll;
-    //console.log(scp);
-    //console.log($("#project").offset().top-($(window).height())/2);
-    if (scp >= 0 && scp <= $("#project").offset().top) {
-        $('#h').addClass("tabon");
-        $('#p, #s, #a, #c').removeClass("tabon");
-    }
-    if (scp >= $("#project").offset().top - 1 && scp <= $("#service").offset().top - 1) {
-        $('#p').addClass("tabon");
-        $('#h, #s, #a, #c').removeClass("tabon");
-    }
-    if (scp >= $("#service").offset().top - 1 && scp <= $("#contactus").offset().top - 1) {
-        $('#s').addClass("tabon");
-        $('#h, #p, #a, #c').removeClass("tabon");
-    }
-    if (scp >= $("#contactus").offset().top - 1 && scp <= $("#about").offset().top - 1) {
-        $('#c').addClass("tabon");
-        $('#h, #s, #a, #p').removeClass("tabon");
-    }
-    if (scp >= $("#about").offset().top - 1) {
-        $('#a').addClass("tabon");
-        $('#h, #s, #c, #p').removeClass("tabon");
-    }
+(function($) {
+  "use strict";
+  $(window).on("load", function() { // makes sure the whole site is loaded
+    //preloader
+    $("#status").fadeOut(); // will first fade out the loading animation
+    $("#preloader").delay(450).fadeOut("slow"); // will fade out the white DIV that covers the website.
+    
+    //masonry
+    $('.grid').masonry({
+      itemSelector: '.grid-item'
+      
+    });    
+  });
 
 
+  $(document).ready(function(){  
 
-    //   console.log(scroll);
-    var scroll1 = $('#service').scrollTop();
-    $('#home').css({
-        'background-position': ' 0px ' + scroll * .4 + 'px  '
-    });
-    $('#homeimg').css({
-        'transform': 'translate(0px, ' + scroll * .6 + 'px ) '
-    });
-    $('#service').css({
-        'background-position': ' 0px ' + (scroll ) * (-0.6) + 'px  '
-    });
-    $('#about').css({
-        'background-position': ' -180px ' + ((scroll - $("#about").offset().top) * (-0.6) -100) + 'px  '
-    });
-    //var a=$('#service').position();
-    //  console.log(a);
-
-    if (scroll > $("#project").offset().top - ($(window).height()) / 2.1) {
-        $(".art").each(function(i) {
-
-            setTimeout(function() {
-                $(".art"). eq(i).addClass("show");
-            }, 150 * (i + 1));
-
-
-
-        })
-    }
-    if (scroll > $("#project").offset().top - ($(window).height()) / 1.4) {
-        $(".proani, .hr").each(function() {
-
-
-            $(".proani, .hr").addClass("show");
-        })
-    }
-
-    t = scroll - $(".des").offset().top;
-    var l1 = $(window).width() / 2 - 100;
-
-    var l = $(".sertab1").width() / 2 - 100;
-    var i = 2;
-    //console.log($(".sertab1").offset().top);
-    if (scroll > $(".sertab1").offset().top  || scroll < $("#contactus").offset().top - ($(window).height())) {
-      //console.log("test1");
-        $(".des").css({
-            'position': 'fixed',
-            'top': ($(window).height() / 2 - 100) + 'px',
-            'left': l1 + 'px'
-        });
-        $(".des").removeClass('des1');
-        setTimeout(function() {
-            i = 1;
-        }, 150);
-
-
-
-    }
-    var height = $("#service").height() - ($(window).height() / 2 - 100) - $("#serhead").height() - 200;
-    if (scroll > $("#contactus").offset().top - ($(window).height())) {
-        //console.log("test2");
-
-        $(".des").css({
-            'position': 'relative',
-            'top': height + 'px',
-
-            'left': l + 'px'
-        });
-
-        setTimeout(function() {
-            i = 1;
-        }, 150);
-
-
-
-    }
-    if (scroll < $(".sertab1").offset().top ) {
-
-            //desoffset = $(".des").offset().top;
-            //console.log("hey:"+desoffset);
-              //console.log("test3");
-            $(".des").css({
-                'position': 'relative',
-                'top': ($(window).height() / 2 - 100) + 'px',
-                'left': l + 'px'
-
-            });
-        }
-//console.log("scroll:" +scroll);
-
-
-
-  //console.log(desoffset);
-  //  console.log(scroll - ($("#s2").offset().top - ($(window).height()) / 2 - 100) + " " + scroll - ($("#s3").offset().top - ($(window).height()) / 2 - 100) + " " + scrollcheck);
-
-
-    var top = 0;
-    if (scroll > $("#s2").offset().top - ($(window).height()) / 2 - 100) {
-        if ((scroll - ($("#s2").offset().top - ($(window).height()) / 2 - 100)) > 200) {
-            scrollcheck = 1;
-            top = 204;
-        } else {
-            top = scroll - ($("#s2").offset().top - ($(window).height()) / 2 - 100)
-
-        }
-        $('#si1,#si2,#si3').css({
-            "position": "relative",
-            "top": -top + "px"
-        });
-
-
-    }
-    if (scroll <= $("#s2").offset().top - ($(window).height()) / 2 - 100 && scrollcheck == 1) {
-
-        top = 0;
-        $('#si1,#si2,#si3').css({
-            "position": "relative",
-            "top": -top + "px"
-        });
-
-    }
-
-
-
-    //third circle
-    if (scroll > $("#s3").offset().top - ($(window).height()) / 2 - 100) {
-        if ((scroll - ($("#s3").offset().top - ($(window).height()) / 2 - 100)) > 200) {
-            scrollcheck = 2;
-            top = 408;
-        } else {
-            top += scroll - ($("#s3").offset().top - ($(window).height()) / 2 - 100)
-
-        }
-        $('#si1,#si2,#si3').css({
-            "position": "relative",
-            "top": -top + "px"
-        });
-
-
-    }
-    if (scroll < $("#s3").offset().top - ($(window).height()) / 2 - 100 && scrollcheck == 2) {
-           if (scroll < $("#s3").offset().top - ($(window).height()) / 2 - 100){top=0; scrollcheck=1;}
-           else top = 200;
-        $('#si1,#si2,#si3').css({
-            "position": "relative",
-            "top": -top + "px"
-        });
-
-    }
-
-
-//console.log("scroll :"+scroll);
-//console.log("ser:"+$("#service").offset().top);
-
-// service
-    //  console.log( $("#service").offset().top-($(window).height()));
-
-     if( scroll > $("#service").offset().top-($(window).height())){
-       var sertop=Math.min(0,scroll-$('#service').offset().top+$(window).height()-470);
-       var opacity=1-(Math.abs(sertop)/470);
-
-         $("#sb1").css({
-         'transform': 'translate('+sertop+'px,'+Math.abs(sertop*0.3)+'px)',
-         'opacity': opacity
-       });
-      // console.log(sertop);
-      }
-      if( scroll > $("#service").offset().top-($(window).height())){
-        var sertop=Math.min(0,scroll-$('#service').offset().top+$(window).height()-550);
-        var opacity=1-(Math.abs(sertop)/470);
-
-          $("#sb2").css({
-          'transform': 'translate('+sertop+'px,'+Math.abs(sertop*0.3)+'px)',
-          'opacity': opacity
-        });
-       }
-       if( scroll > $("#service").offset().top-($(window).height())){
-         var sertop=Math.min(0,scroll-$('#service').offset().top+$(window).height()-630);
-         var opacity=1-(Math.abs(sertop)/470);
-
-           $("#sb3").css({
-           'transform': 'translate('+sertop+'px,'+Math.abs(sertop*0.3)+'px)',
-           'opacity': opacity
-         });
-        }
-// Image circle
-     //img circle  1
-        if( scroll > $("#service").offset().top-($(window).height())){
-          var sertop=Math.min(0,scroll-$('#service').offset().top+$(window).height()-470);
-          var opacity=1-(Math.abs(sertop)/470);
-
-            $("#sc1").css({
-            'transform': 'translate('+(-sertop)+'px,'+Math.abs(sertop*0.3)+'px)',
-            'opacity': opacity
-          });
-         }
-//img circle 2
-    if( scroll > $("#service").offset().top-($(window).height())){
-      var sertop=Math.min(0,scroll-$('#service').offset().top+$(window).height()-510);
-      var opacity=1-(Math.abs(sertop)/470);
-
-        $("#sc2").css({
-        'transform': 'translate('+(-sertop)+'px,'+Math.abs(sertop*0.3)+'px)',
-        'opacity': opacity
+    //active menu
+    $(document).on("scroll", onScroll);
+ 
+    $('a[href^="#"]').on('click', function (e) {
+      e.preventDefault();
+      $(document).off("scroll");
+ 
+      $('a').each(function () {
+        $(this).removeClass('active');
+      })
+      $(this).addClass('active');
+ 
+      var target = this.hash;
+      $target = $(target);
+      $('html, body').stop().animate({
+        'scrollTop': $target.offset().top+2
+      }, 500, 'swing', function () {
+        window.location.hash = target;
+        $(document).on("scroll", onScroll);
       });
-     }
- //img circle 3
-     if( scroll > $("#service").offset().top-($(window).height())){
-       var sertop=Math.min(0,scroll-$('#service').offset().top+$(window).height()-550);
-       var opacity=1-(Math.abs(sertop)/470);
+    });
 
-         $("#sc3").css({
-         'transform': 'translate('+(-sertop)+'px,'+Math.abs(sertop*0.3)+'px)',
-         'opacity': opacity
-       });
+    
+    //scroll js
+    smoothScroll.init({
+      selector: '[data-scroll]', // Selector for links (must be a valid CSS selector)
+      selectorHeader: '[data-scroll-header]', // Selector for fixed headers (must be a valid CSS selector)
+      speed: 500, // Integer. How fast to complete the scroll in milliseconds
+      easing: 'easeInOutCubic', // Easing pattern to use
+      updateURL: true, // Boolean. Whether or not to update the URL with the anchor hash on scroll
+      offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+      callback: function ( toggle, anchor ) {} // Function to run after scrolling
+    });
+
+    //menu
+    var bodyEl = document.body,
+    content = document.querySelector( '.content-wrap' ),
+    openbtn = document.getElementById( 'open-button' ),
+    closebtn = document.getElementById( 'close-button' ),
+    isOpen = false;
+
+    function inits() {
+      initEvents();
+    }
+
+    function initEvents() {
+      openbtn.addEventListener( 'click', toggleMenu );
+      if( closebtn ) {
+        closebtn.addEventListener( 'click', toggleMenu );
       }
-  //img circle 4
-      if( scroll > $("#service").offset().top-($(window).height())){
-        var sertop=Math.min(0,scroll-$('#service').offset().top+$(window).height()-590);
-        var opacity=1-(Math.abs(sertop)/470);
 
-          $("#sc4").css({
-          'transform': 'translate('+(-sertop)+'px,'+Math.abs(sertop*0.3)+'px)',
-          'opacity': opacity
-        });
-       }
-   //img circle 2
-       if( scroll > $("#service").offset().top-($(window).height())){
-         var sertop=Math.min(0,scroll-$('#service').offset().top+$(window).height()-630);
-         var opacity=1-(Math.abs(sertop)/470);
-
-           $("#sc5").css({
-           'transform': 'translate('+(-sertop)+'px,'+Math.abs(sertop*0.3)+'px)',
-           'opacity': opacity
-         });
+      // close the menu element if the target it´s not the menu element or one of its descendants..
+      content.addEventListener( 'click', function(ev) {
+        var target = ev.target;
+        if( isOpen && target !== openbtn ) {
+          toggleMenu();
         }
+      } );
+    }
+
+    function toggleMenu() {
+      if( isOpen ) {
+        classie.remove( bodyEl, 'show-menu' );
+      }
+      else {
+        classie.add( bodyEl, 'show-menu' );
+      }
+      isOpen = !isOpen;
+    }
+
+    inits();
 
 
-});
+    //typed js
+    $(".typed").typed({
+        strings: ["My Name is M.Reza", "I'm a Web Designer", "Love Simplicity"],
+        typeSpeed: 100,
+        backDelay: 900,
+        // loop
+        loop: true
+    });
+
+    //owl carousel
+    $('.owl-carousel').owlCarousel({
+      autoPlay: 3000, //Set AutoPlay to 3 seconds
+ 
+      items : 1,
+      itemsDesktop : [1199,1],
+      itemsDesktopSmall : [979,1],
+      itemsTablet : [768,1],
+      itemsMobile : [479,1],
+
+      // CSS Styles
+      baseClass : "owl-carousel",
+      theme : "owl-theme"
+    });
+
+    $('.owl-carousel2').owlCarousel({
+      autoPlay: 3000, //Set AutoPlay to 3 seconds
+ 
+      items : 1,
+      itemsDesktop : [1199,1],
+      itemsDesktopSmall : [979,1],
+      itemsTablet : [768,1],
+      itemsMobile : [479,1],
+      autoPlay : false,
+
+      // CSS Styles
+      baseClass : "owl-carousel",
+      theme : "owl-theme"
+    });
+
+    //contact
+    $('input').blur(function() {
+
+      // check if the input has any value (if we've typed into it)
+      if ($(this).val())
+        $(this).addClass('used');
+      else
+        $(this).removeClass('used');
+    });
+
+    //pop up porfolio
+    $('.portfolio-image li a').magnificPopup({
+      type: 'image',
+      gallery: {
+        enabled: true
+      }
+      // other options
+    });
+    
+    //Skill
+    jQuery('.skillbar').each(function() {
+      jQuery(this).appear(function() {
+        jQuery(this).find('.count-bar').animate({
+          width:jQuery(this).attr('data-percent')
+        },3000);
+        var percent = jQuery(this).attr('data-percent');
+        jQuery(this).find('.count').html('<span>' + percent + '</span>');
+      });
+    }); 
+
+  
+  });
+  
+    
+  //header
+  function inits() {
+    window.addEventListener('scroll', function(e){
+        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+            shrinkOn = 300,
+            header = document.querySelector(".for-sticky");
+        if (distanceY > shrinkOn) {
+            classie.add(header,"opacity-nav");
+        } else {
+            if (classie.has(header,"opacity-nav")) {
+                classie.remove(header,"opacity-nav");
+            }
+          }
+      });
+    }
+
+  window.onload = inits();
+
+  //nav-active
+  function onScroll(event){
+    var scrollPosition = $(document).scrollTop();
+    $('.menu-list a').each(function () {
+      var currentLink = $(this);
+      var refElement = $(currentLink.attr("href"));
+      if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
+        $('.menu-list a').removeClass("active");
+        currentLink.addClass("active");
+      }
+      else{
+        currentLink.removeClass("active");
+      }
+    });
+  }
+
+})(jQuery);
