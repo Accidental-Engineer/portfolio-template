@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/feedback.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+    <link rel="icon" href="res/images/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/feedback.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+</head>
+
+<body datalist="scroll">
+    <div id="container">
+
+        <!-- The home div that shows a welcome image with some links to various social sites-->
+        <div style = "min-width: 100%; min-height: 20%; background: rgb(91, 46, 0); clear: both;">
+          <!-- This is the rigid menu containing social sites' links -->
+          <ul style = "position: fixed; z-index: 2;">
+            <li style = "padding: 10px; border: 1px solid pink; margin-bottom: 15px;"><i class = "fa fa-facebook" aria-hidden = true></i></li>
+            <li style = "padding: 10px; border: 1px solid pink; margin-bottom: 15px;"><i class = "fa fa-twitter" aria-hidden = true></i></li>
+            <li style = "padding: 10px; border: 1px solid pink; margin-bottom: 15px;"><i class = "fa fa-github" aria-hidden = true></i></li>
+            <li style = "padding: 10px; border: 1px solid pink; margin-bottom: 15px;"><i class = "fa fa-linkedin" aria-hidden = true></i></li>
+          </ul>
+        </div>
+
+        <div>
+            <ul>
+                <a href="#about">
+                  <li class="tab" id="a"><i class="fa fa-book"></i><span class = "link-label">&nbsp;&nbsp;About Us</span></li>
+                </a>
+                <a href="#contactus">
+                  <li class="tab" id="c"><i class="fa fa-address-book"></i><span class = "link-label">&nbsp;&nbsp;Contact Us</span></li>
+                </a>
+                <a href="#service">
+                  <li class="tab" id="s"><i class="fa fa-th-large"></i><span class = "link-label">&nbsp;&nbsp;Services</span></li>
+                </a>
+                <a href="#project">
+                  <li class="tab" id="p">  <i class="fa fa-briefcase"></i><span class = "link-label">&nbsp;&nbsp;Projects</span></li>
+                </a>
+                <a href="#home">
+                  <li class="tab tabon" id="h">  <i class="fa fa-home"></i><span class = "link-label">&nbsp;&nbsp;Home</span></li>
+                </a>
+            </ul>
+        </div>
+
+        <div id="project">
+            <h1 class="proani">PROJECTS</h1>
+            <hr class="hr">
+
+            <div class="art">
+                <a href="#">
+                    <div class="i" id="1">
+                        <figure>
+                            <img src="res/images/projects/1.jpg" alt="">
+                            <figcaption id="a1">SHoutBox</figcaption>
+                        </figure>
+                    </div>
+                </a>
+                <div class="j">
+                    SHoutBox
+                </div>
+                <div class="j" style="">SHoutBox is a chat service.<br> <a href="http://www.myshoutbox.tk">http://www.myshoutbox.tk</div>
+            </div>
+
+            <div class="art">
+                <a href="#">
+                    <div class="i" id="2">
+                        <figure>
+                            <img src="res/images/projects/2.jpg" alt="">
+                            <figcaption id="a2">Jasper</figcaption>
+                        </figure>
+                    </div>
+                </a>
+                <div class="j">
+                    JasperBudd
+                </div>
+                <div class="j">Intranet Website for Jasper Hostel.</div>
+            </div>
+            <div class="art">
+                <a href="#">
+                    <div class="i" id="3">
+                      <figure>
+                          <img src="res/images/projects/3.jpg" alt="">
+                          <figcaption id="a3">SHoutBox</figcaption>
+                      </figure>
+
+                    </div>
+                </a>
+                <div class="j">
+                    Title
+                </div>
+                <div class="j">hi this is my article.</div>
+            </div>
+            <div class="art">
+                <a href="#">
+                    <div class="i" id="4">
+                      <figure>
+                        <img src="res/images/projects/4.jpg" alt="">
+                        <figcaption id="a4">SHoutBox</figcaption>
+                      </figure>
+
+                    </div>
+                </a>
+                <div class="j">
+                    Title
+                </div>
+                <div class="j">hi this is my article.</div>
+            </div>
+            <a href="#"><h2>More...</h2></a>
+        </div>
+        <div id="service">
+            <div id='serhead'>
+                <h1>SERVICES</h1>
+                <hr>
+            </div>
+            <div class="sertab">
+                <div class="sersec" id="s1">
+
+                    <span><h2 class="serhead" >Web Development</h2></span>
+                    <p class="serpara" id="sb1">Web development is a broad term for the work involved in
+                      developing a web site for the Internet (World Wide Web)
+                      or an intranet (a private network). Web development can
+                      range from developing the simplest static single page of
+                      plain text to the most complex web-based internet
+                      applications, electronic businesses, and social network
+                      services.
+                    <p class="serpara" id="sb2">A more comprehensive list of tasks to which
+                      web development commonly refers, may include web
+                      engineering, web design, web content development,
+                      client liaison, client-side/server-side scripting, web
+                      server and network security configuration, and e-commerce
+                      development. Among web professionals, "web development"
+                      usually refers to the main non-design aspects of building
+                      web sites: writing markup and coding.
+                    </p>
+                      <p class="serpara" id="sb3">Most recently Web
+                      development has come to mean the creation of content
+                      management systems or CMS. These CMS can be made from
+                      scratch, proprietary or open source. In broad terms the
+                      CMS acts as middleware between the database and the user
+                      through the browser. A principle benefit of a CMS is that
+                      it allows non-technical people to make changes to their
+                      web site without having technical knowledge.
+                    </p>
+
+                </div>
+                <div class="sersec" id="s2">
+
+                </div>
+                <div class="sersec" id="s3">
+
+                </div>
+
+            </div>
+            <div class="sertab1">
+                <div class="des">
+                  <img src="res/images/test/web.jpg" id="si1">
+                  <img src="res/images/test/b.jpg" id="si2">
+                  <img src="res/images/test/c.jpg" id="si3">
+
+                </div>
+            </div>
+            <div class="sertab">
+                <div class="sersec">
+                  <div class="imgcircle" id="sc1">
+
+                  </div>
+                  <div class="imgcircle" id="sc2">
+
+                  </div>
+                  <div class="imgcircle" id="sc3">
+
+                  </div>
+                  <div class="imgcircle" id="sc4">
+
+                  </div>
+                  <div class="imgcircle" id="sc5">
+
+                  </div>
+
+                </div>
+                <div class="sersec">
+
+                </div>
+                <div class="sersec">
+
+                </div>
+
+            </div>
+
+        </div>
+        <div id="contactus">
+            <h1>Contact Us</h1>
+            <hr class="hr">
+            <br>
+
+
+        </div>
+        <div id="about">
+
+          <div class="story-img active" id="thumbab1" style="background-image: url('res/images/about/bk_cover/t_back.jpg'); display: block; opacity: 1;">
+          </div>
+          <div class="story-img" id="thumbab3" style="background-image: url('res/images/about/bk_cover/s_back.jpg'); display: block; opacity: 0;">
+          </div>
+          <div class="story-img" id="thumbab2" style="background-image: url('res/images/about/bk_cover/vi_back.jpg'); display: block; opacity: 0;">
+          </div>
+          <div class="story-img" id="thumbab4" style="background-image: url('res/images/about/bk_cover/ae_back.jpg'); display: block; opacity: 0;">
+          </div>
+          <div id="heading"></div>
+          <div id="aboutbody" >
+          <div id ="i"></div>
+                <div class ="HL1"></div>
+                <div class ="HL "></div>
+                <div class ="VL VL1"></div>
+
+                	<div class="r1" id="ab1">
+
+                    <div class="content"><h2>Tarun Kumar</h2></div>
+                		<div class="story" style="background-color:#f4ba49; color:rgb(40, 40, 40)">
+                      <div class="img"><img src="res/images/about/tarun.jpg" width="100px"></div>
+                      <div class="story-con">
+                      <div class="d2"><span class="name">Tarun Kumar</span><br>
+                        <span class="contributor">Founder</span><br>
+                        Pursuing B.Tech in Petroleum Engineering from IIT(ISM) Dhanbad, is passionate about programming and designing. He has good hands at CSS3, including animation and media-query. His programming skills include C, C++, Python and Java.<br>
+                        <span class="contact">Contact: tarun12.tarunkr@gmail.com</span></div>
+                      </div>
+                    </div>
+                	</div>
+                	<div class="r1"  id="ab2">
+                    <div class="content"><h2>Vision</h2></div>
+                    <div class="story" style="background-color:#006cad;color:rgb(223, 223, 223)">
+                      <div class="img"><img src="res/images/about/vi.jpeg" width="100px"></div>
+                      <div class="story-con">
+                      <div class="d2"><span class="name">Vision</span><br>
+                        <span class="contributor" style="color:rgb(158, 158, 158)" >OurVision</span><br>
+                            Accidental Engineer is a programming hub open for all. Anyone intrested in programmnig can join this hub. Our organization, Accidental Engineer, works on various real-world projects based on programming, development and designing skills. Anybody interested to contribute can contact us on Facebook and GitHub.<br>
+                        <span class="contact"></span></div>
+                      </div>
+                    </div>
+                	</div>
+
+
+                	<div class="r2" id="ab3">
+                    <div class="content"><h2>Shivam Kumar</h2></div>
+                	<div class="story" style="background-color:#4f1b24 ; color:rgb(223, 223, 223)">
+                    <div class="img"><img src="res/images/about/shivam.jpg" width="100px"></div>
+                    <div class="story-con">
+                    <div class="d2"><span class="name">Shivam Kumar</span><br>
+                      <span class="contributor" style="color:rgb(158, 158, 158)">Founder</span><br>
+                      Pursuing Integrated M. Tech in Mathematics & Computing from IIT(ISM) Dhanbad, has keen interest in Web Development. He has good hands at JavaScript, PHP and MySQL and programming expertise in C and C++.<br>
+                      <span class="contact" style="color:rgb(158, 158, 158)">Contact: skshivam64@gmail.com</span></div>
+                	</div>
+                	</div>
+                	</div>
+                	<div class="r2" id="ab4">
+                    <div class="content"><h2>Accidental Engineer</h2></div>
+                		<div class="story" style="background-color:#f44949; color:rgb(40, 40, 40)">
+                      <div class="img"><img src="res/images/about/ae.jpg" width="100px"></div>
+                      <div class="story-con">
+                      <div class="d2"><span class="name" style="font-size:30px">Accidental Engineer</span><br>
+                        <span class="contributor">Company</span><br>
+                        Accidental Engineer is a community of programmers, developers and designers. It works on real world programming, web development and design projects. Follow us on GitHub : <a src="https://github.com/Accidental-Engineer">https://github.com/Accidental-Engineer</a><br>
+                        <span class="contact">Contact: engineeraccidental@gmail.com</span></div>
+                      </div>
+                    </div>
+                	</div>
+
+
+            </div>
+        </div>
+        <div id = "footer">
+                    <div id = "footer-icon-bar">
+                          <table>
+                            <tr>
+                                      <td><center><a href="#home"><i class = "fa fa-archive"></i><br/><span class = "link-label-footer">Newsletter</span></a></center></td>
+                                      <td><center><a href="#project"><i class = "fa fa-user-secret"></i><br/><span class = "link-label-footer">Privacy Policy</span></center></a></td>
+                            </tr>
+                            <tr>
+                                      <td><center><a href="#service"><i class = "fa fa-cogs"></i><br/><span class = "link-label-footer">Terms Of Service</span></a></center></td>
+                                      <td><center><a href="#contactus"><i class = "fa fa-newspaper-o"></i><br/><span class = "link-label-footer">News &amp; Events</span></a></center></td>
+                            </tr>
+                            <tr>
+                                      <td><center><a href="#contactus"><i class = "fa fa-road"></i><br/><span class = "link-label-footer">Career</span></a></center></td>
+                                      <td><center><a href = "#feedback" id = "feedbackBtn" style = "clear:both;"><i class = "fa fa-commenting-o"></i><br/><span class = "link-label-footer">Feedback</span></a></center></td>
+                            </tr>
+                          </table>
+                    </div>
+
+                    <div id="social-icon-bar">
+                      <br>
+                                <a href="https://www.facebook.com/accidentalengineer/" target="_blank"><i class="fa fa-facebook" aria-hidden="true" style="color:#3b5998"></i></a>
+                                <a href="https://github.com/Accidental-Engineer" target="_blank"><i class="fa fa-github" aria-hidden="true" style="color:#24292e"></i></a>
+                                <a href="https://www.youtube.com/channel/UCsuCSia81mUAv7DzRbAEskA" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true" style="color:#c51a1e"></i></a>
+                                <a href="https://linkedin.com/company/accidentalengineer" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true" style="color:#0077b5"></i></a>
+                    </div>
+                    <p >Designed and Created By Accidental Engineer</p>
+
+          </div>
+
+
+          <a name = "feedback">
+                              <div class = "feedbackBox" id = "feedbackBox1">
+                                          <center><i class="fa fa-comments fa-2x hover" aria-hidden="true"></i><br/><br/>
+                                          <pre>Name:      <input class = "feed" type = "text"/></pre><br/>
+                                          <pre>Email:     <input class = "feed" type = "text"/></pre><br/>
+                                          <button class = "feddBtn" id = "feedBtn1" type = "button">Next>>></button></center>
+                              </div>
+                              <div class = "feedbackBox" id = "feedbackBox2">
+                                          <center><i class="fa fa-comments fa-2x hover" aria-hidden="true"></i>&nbsp;&nbsp;Feedback
+                                          <br/><br/><textarea class = "feed" cols = "40" rows = "3">Please give your valuable feedback.</textarea><br/>
+                                          <button class = "feddBtn" id = "feedBtn2" type = "button">Finish</button></center>
+                              </div>
+                              <div class = "feedbackBox" id = "feedbackBox3">
+                                          <center><i class="fa fa-check-square-o fa-2x hover" aria-hidden="true"></i><br/><br/>
+                                          Thanks for giving your feedback!</center>
+                              </div>
+          </a>
+
+      </div>
+
+
+</body>
+
+</html>
